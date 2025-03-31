@@ -1,0 +1,166 @@
+컬렉션자료형 : 하나의 변수에 여러 개의 값들을 저장, 관리하는 자료형
+ - 리스트, 튜플, 셋, 딕셔너리 4개의 자료형
+ - 각 자료형마다 활용 목적이 있으며, 사용 방법도 모두 차이가 있음
+
+* 고려할 중요 특징
+ - 순서 적용 여부 : 순서가 적용되면 인덱싱 가능
+ - 값 변경 가능 여부 : 값의 변경 가능 여부
+ - 중복 여부 : 중복된 값 허용 여부
+ - 다양한 자료형의 혼합 저장 가능 여부(중요성 하)
+
+
+
+>list<
+
+- 순서가 중요
+- 변경 가능
+- 중복값 허용
+- 다양한 데이터 타입 혼합 가능
+- 대괄호[]로 생성
+
+- 주 사용 목적 : 데이터 순서가 중요할 때/ 반복 작업과 데이터 추가-삭제가 필요한 경우/ 리스트 컴프리헨션을 사용한 데이터 변환 및 생성
+
+- 단점 : 너무 큰 리스트를 사용할 때 메모리 사용률 증가
+- 리스트의 크기가 커질 수록 검색과 삽입 작업에서 성능 저하 가능
+
+>Tuple<
+
+- 순서가 있음
+- 변경 불가능 - 해시 가능
+- 중복된 값 허용
+- 다양한 데이터 타입 혼합 가능
+- 소괄호()로 생성
+
+
+- 주 사용 목적 : 변경되지 않아야 할 데이터 저장/ 키와 값 쌍으로 데이터를 저장하거나 함수 반환값으로 사용/ 메모리 효율성이 필요할 때 사용
+
+- 주의점 : 데이터를 변경해야 하는 경우 부적합
+- 단일 요소 튜플 생성 시 (value,)처럼 쉼표 필수 >> t = (1) 처럼 표현 시, 괄호는 수식으로 동시되어 쉼표 필수
+type(t) >> <class 'int'>
+
+
+
+> set <
+
+- 순서가 없음
+- 변경 가능 - 해시 가능
+- 중복값 비허용
+- 해시 가능한 데이터만 저장 가능 ****
+- 중괄호 {} 또는 set()로 생성
+
+
+> dict <
+
+- 키-값 쌍으로 구성
+- 순서가 있음
+- 변경 가능
+- 키는 중복 불가/ 값은 중복 가능
+- 중괄호{}로 생성
+
+a = {"name" : "zean", "age" : 20}
+
+- 주요 사용 목적 : 키를 통해 데이터 효율적 검색
+- 매핑 구조를 사용한 데이터 저장
+- JSON과 같은 데이터 구조 표현
+
+
+- 키는 해시 가능한 데이터만 가능 : 리스트는 키로 사용할 수 없음
+- 너무 많은 키를 저장하면 메모리 사용량 증가
+
+
+
+
+
+
+* 메소드와 명령어 차이
+- 메소드
+
+
+
+**** 해시(Hash) : 데이터를 고정된 크기의 값으로 변환하는 함수. 고유값.
+**** 두 개의 다른 객체가 동일한 해시값을 가질 수 있는 경우를 해시 충돌이라고 한다. >> 성능 저하
+**** 비슷한 글자라고 해서 비슷한 값이 나오진 않음
+- hash("kim")
+- hash("k"), hash("i"), hash("m")이 비슷한 값이 나오지 안흥ㅁ
+
+- 주의점 : 순서가 중요하거나 데이터의 위치를 알고 싶을 때 부적합
+- 변경 불가능한 자료형만 저장 가능 ex) set([1, 2, {3}])은 오류 발생
+
+
+
+
+
+
+
+
+리스트 컴프리헨션
+
+- expression for item in iterable [if condition]
+
+
+
+# 각 나라의 첫 글자만
+
+c = ["Korea", "Japan", "Jameica", "Ukraine", "South Africa", "United States of America", "United Kindom"]
+
+result = [item[0] for item in c]
+    
+print(result)
+
+
+# 홀수만 찾아서 새 리스트 생성
+
+lst = [2, 5, 6, 1, 3, 9, 10]
+
+"""
+lst에서 홀수만 찾아서 만든 새 리스트 생성하기
+"""
+
+result = [] # 홀수만 담을 빈 리스트 생성
+
+"""
+for item in lst:
+    if item % 2 != 0:
+        result.append(item) #result에 홀수 추가
+
+print(result)
+print(lst)
+"""
+
+result = [item for item in lst if item %2 != 0]
+
+print(result)
+
+
+
+
+# 나라 이름 길이
+
+c = ["Korea", "Japan", "Jameica", "Ukraine", "South Africa", "United States of America", "United Kindom"]
+
+result = [len(item) for item in c]
+
+print(result)
+
+
+
+
+# 나라 이름 철자를 역순으로 저장
+
+c = ["Korea", "Japan", "Jameica", "Ukraine", "South Africa", "United States of America", "United Kindom"]
+
+result = [item[::-1] for item in c]
+
+print(result)
+
+
+
+# 짝수는 양수로, 홀수는 음수로 저장
+
+c = [item for item in range(1, 10)]
+
+result = [item if item%2 != 0 else -item for item in c]
+
+print(result)
+
+

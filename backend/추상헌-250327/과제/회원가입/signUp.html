@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원 가입 폼</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 600px; margin: 20px auto; }
+        form p { margin: 10px 0; }
+        label { display: inline-block; width: 100px; }
+        input, select, textarea { padding: 5px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>회원 가입</h2>
+    <!-- 입력 데이터를 signUpResult.jsp로 POST 방식으로 전송 -->
+    <form action="signUpResult.jsp" method="post">
+        <p>
+            <label for="userId">아이디:</label>
+            <input type="text" id="userId" name="userId" required>
+        </p>
+        <p>
+            <label for="password">비밀번호:</label>
+            <input type="password" id="password" name="password" required>
+        </p>
+        <p>
+            <label for="name">이름:</label>
+            <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+            <label for="email">이메일:</label>
+            <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+            <label>성별:</label>
+            <input type="radio" name="gender" value="Male" required>남
+            <input type="radio" name="gender" value="Female">여
+        </p>
+        <p>
+            <label>취미:</label>
+            <input type="checkbox" name="hobbies" value="Reading">독서
+            <input type="checkbox" name="hobbies" value="Sports">운동
+            <input type="checkbox" name="hobbies" value="Music">음악
+            <input type="checkbox" name="hobbies" value="Travel">여행
+        </p>
+        <p>
+            <label for="interests">관심분야:</label>
+            <select id="interests" name="interests" multiple size="4">
+                <option value="Technology">기술</option>
+                <option value="Finance">재테크</option>
+                <option value="Health">건강</option>
+                <option value="Education">교육</option>
+            </select>
+        </p>
+        <p>
+            <label for="address">주소:</label>
+            <textarea id="address" name="address" rows="3"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="가입">
+        </p>
+    </form>
+</div>
+</body>
+</html>

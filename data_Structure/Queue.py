@@ -5,25 +5,14 @@ from DList import *
 
 class QueueUnderFlow(Exception):
   pass
+
 #====================================================
 class Queue(DList):
   # 큐에 새 데이터(value)를 추가한다.
   def add(self, value):
     self.append(value)
-#====================================================
-# Infix 문자열을 읽어 token(연산자, 피연산자, 괄호) 단위로 분리하여 순서대로 Queue에 저장하고
-# queue를 반환한다.
-# 23.4 *(43.4 + 35) / 23.1243" => ["23.4", "*", "(", "43.4", "+", "35", ")", ...]
-def toToekns(strInfix):
-  queue = Queue()
-  lst = []
-  lst.append(token)
-  queue.add(token)
-  pass
 
-  def infix2Postfix(lst, queue)
-#====================================================
-# 큐의 맨 앞(가장 오래전에 추가된 데이터)에 있는 데이터를 꺼낸다.
+  # 큐의 맨 앞(가장 오래전에 추가된 데이터)에 있는 데이터를 꺼낸다.
   def remove(self):
     if self.isEmpty():
       raise QueueUnderFlow("Queue is Empty!!!")
@@ -31,7 +20,9 @@ def toToekns(strInfix):
       returnValue = self.head.data
       super().remove(self.head)
       return returnValue
+
 #====================================================
+# 테스트
 queue = Queue()
 queue.add(100)
 queue.add(200)
@@ -41,3 +32,7 @@ queue.showList()
 queue.remove()
 queue.showList()
 print(queue.isEmpty())
+
+#====================================================
+
+

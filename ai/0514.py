@@ -84,8 +84,8 @@ area(width=10, height=20)
 def sumAvg(a,b):
     return a+b, (a+b)/2
 
+print(sumAvg(6,2))
 
 
-      
 
                         

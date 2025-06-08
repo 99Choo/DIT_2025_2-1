@@ -109,6 +109,11 @@ class DList:
         self.count -= 1
         del targetNode
 
+    def isEmpty(self):
+        if self.count == 0:
+            return True
+        return False
+    
 
 # # 테스트 코드 예시
 lst = DList()

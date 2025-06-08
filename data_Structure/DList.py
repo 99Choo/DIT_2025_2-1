@@ -111,12 +111,12 @@ class DList:
 
 
 # # 테스트 코드 예시
-# lst = DList()
-# lst.append(10)
+lst = DList()
+lst.append(10)
 # lst.append(20)
 # lst.insertFront(5)
 # lst.insertBefore(lst.find(20), 15)
 # lst.insertAfter(lst.find(10), 12)
 # lst.show()
 # lst.remove(lst.find(15))
-# lst.show()
+lst.showList()

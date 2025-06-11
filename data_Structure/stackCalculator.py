@@ -126,6 +126,7 @@ if __name__ == "__main__":
     print("Postfix Queue:")
     postfix_queue.showList()
 
-lst = toTokens("3.4 + 35 * (45 - 23)")
+lst = Queue.totokens("3.4 + 35 * (45 - 23)")
 print(lst)
 print(stackCalculator(infix2Postfix(lst)))
+

@@ -97,31 +97,7 @@ class SList:
     #--------------------------------------------
     # 정렬되지 않은 현재의 리스트를 정렬 상태로 재구성한다.
     def sort(self, order="UP"):
-        sorted = SList()    # 빈 SList를 하나 생성한다.
-        # 현재 리스트의 노드를 하나씩 차례대로 꺼내서 sorted 리스트에 insertSorted 로 추가한다.
-        while self.count:
-            sorted.insertSorted(self.unshift(), order)
-        
-        self.head = sorted.head
-        self.count = sorted.count
-    #--------------------------------------------
-    # 현재 리스트의 복사본 리스트를 생성하여 반환하기
-    def copy(self):
-        newList = SList()
-        current = self.head
-        while current:
-            newList.appendValue(current.data)
-            current = current.next
-        return newList
-    #--------------------------------------------
-    # 현재 단순 연결 리스트의 파이썬 리스트 버전을 생성하여 반환한다.
-    def list(self):
-        newList = list()
-        current = self.head
-        while current:
-            newList.append(current.data)
-            current = current.next
-        return newList
+        pass
     #--------------------------------------------
     # 리스트의 정렬 상태를 유지하면서 새 노드를 추가한다.
     def insertSorted(self, newNode, order="UP"):
@@ -211,5 +187,6 @@ slist.appendValue(40)
 slist.appendValue(230)
 slist.appendValue(10)
 slist.showList()
-for item in slist.list():
-    print(item)
+slist.sort()
+slist.showList()
+#=================================================
